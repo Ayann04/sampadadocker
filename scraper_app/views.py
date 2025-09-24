@@ -381,7 +381,7 @@ def trigger_scrape(request):
             while True:  # Keep looping through all pages until no next button
                     _create_status(new_run, "Fetch all record links on current page")
                     driver.execute_script("window.scrollBy(0, 500);")
-                    data_elements_2 = driver.find_elements(By.CSS_SELECTOR,'td.mat-cell>span.link')
+                    data_elements_2 = driver.find_elements(By.XPATH,'//td[contains(@class, 'mat-column-registrationNumber')]/span')
                     print(len(data_elements_2))
                     _create_status(new_run,f"->{len(data_elements_2)}",) 
                     for i in range(len(data_elements_2)):
