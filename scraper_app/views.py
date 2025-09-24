@@ -383,6 +383,7 @@ def trigger_scrape(request):
                     driver.execute_script("window.scrollBy(0, 500);")
                     data_elements_2 = driver.find_elements(By.CSS_SELECTOR,'td.mat-cell>span.link')
                     print(len(data_elements_2))
+                    _create_status(new_run,f"->{len(data_elements_2)}",) 
                     for i in range(len(data_elements_2)):
                         # Re-fetch elements each time (important after navigation/closing modal)
                         # data_elements_2 = driver.find_elements(By.CSS_SELECTOR,'td.mat-cell>span.link')
