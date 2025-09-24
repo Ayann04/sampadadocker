@@ -459,7 +459,7 @@ def trigger_scrape(request):
                             time.sleep(3)
                         except:
                             print("Close button not found")
-                    _create_status(new_run,f"Scraping finished of {i}",)
+        
                     time.sleep(10)
                     # --- Pagination Part ---
                     try:
