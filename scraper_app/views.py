@@ -227,10 +227,7 @@ def trigger_scrape(request):
 
     
     try:
-        # driver = _driver_from_config()
-        chrome_options = Options()
-        service = Service(os.environ.get("CHROMEDRIVER_PATH"))
-        driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = _driver_from_config()
         driver.get("https://sampada.mpigr.gov.in/#/clogin")
         time.sleep(20)
         english_to = driver.find_elements(By.CSS_SELECTOR,'div.ng-star-inserted>a')
